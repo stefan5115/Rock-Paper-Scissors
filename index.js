@@ -1,7 +1,16 @@
 function getComputerChoice(){
     let choice = ['rock','paper','scissors']
     let randomNumber = Math.floor(Math.random() * 3)
-    console.log(choice[randomNumber]) 
+    return choice[randomNumber]
 }
 
-getComputerChoice()
+function playRound (playerSlection, computerSelection){
+    if(playerSlection.toLowerCase() === computerSelection){
+        return "It's a tied"
+    }
+}
+
+let player = 'rock';
+let computer = getComputerChoice()
+console.log(playRound(player,computer))
+
