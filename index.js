@@ -2,11 +2,16 @@ let scorePlayer = 0
 let scoreComputer = 0
 let tied = 0
 
+const rock = document.getElementById('rock')
+const paper = document.getElementById("paper")
+const scissors = document.getElementById("scissors")
+
 function getComputerChoice(){
     let choice = ['rock','paper','scissors']
     let randomNumber = Math.floor(Math.random() * 3)
     return choice[randomNumber]
 }
+let computer = getComputerChoice()
 
 function playRound (playerSelection, computerSelection){
     if(playerSelection.toLowerCase() === computerSelection){
@@ -33,18 +38,23 @@ function playRound (playerSelection, computerSelection){
     }
 }
 
-function game(){
-    for(let i = 0; i < 5 ; i++){
-        let player = prompt("Ce alegi: ROCK | PAPER | SCISSORS ?")
-        let computer = getComputerChoice()
-        console.log(playRound(player,computer)) 
-        console.log(`Player:${scorePlayer} Tied:${tied} Computer${scoreComputer}`)
-    }
-    if(scorePlayer > scoreComputer){
-        console.log("Player win!!")
-    }else{
-        console.log("Computer win!!")
-    }
-}
+rock.addEventListener("click",() => {console.log(playRound('rock',computer))})
+paper.addEventListener("click",() => {console.log(playRound('paper',computer))})
+scissors.addEventListener("click",() => {console.log(playRound('scissors',computer))})
 
-game()
+// function game(){
+//     for(let i = 0; i < 5 ; i++){
+//         let player = prompt("Ce alegi: ROCK | PAPER | SCISSORS ?")
+//         let computer = getComputerChoice()
+//         console.log(playRound(player,computer)) 
+//         console.log(`Player:${scorePlayer} Tied:${tied} Computer${scoreComputer}`)
+//     }
+    
+//     if(scorePlayer > scoreComputer){
+//         console.log("Player win!!")
+//     }else{
+//         console.log("Computer win!!")
+//     }
+// }
+
+// game()
