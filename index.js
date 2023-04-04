@@ -6,55 +6,58 @@ const rock = document.getElementById('rock')
 const paper = document.getElementById("paper")
 const scissors = document.getElementById("scissors")
 
+const playerChoise = [rock, paper, scissors]
+
+
+const container = document.getElementById('container')
+const secondContainer = document.getElementById('secondContainer')
+
 function getComputerChoice(){
     let choice = ['rock','paper','scissors']
     let randomNumber = Math.floor(Math.random() * 3)
     return choice[randomNumber]
 }
-let computer = getComputerChoice()
+
 
 function playRound (playerSelection, computerSelection){
     if(playerSelection.toLowerCase() === computerSelection){
         tied++
-        return "It's a tied"
+        container.textContent = "It's a tied"
     }else if (playerSelection.toLowerCase() === 'rock' && computerSelection === "paper"){
         scoreComputer++
-        return "Computer Win!"
+         container.textContent = "Computer Win!"
+         secondContainer.textContent = `Player Score: ${scorePlayer}  Computer Score: ${scoreComputer}`
     }else if (playerSelection.toLowerCase() === 'rock' && computerSelection === "scissors"){
         scorePlayer++
-        return "You Win!"
+         container.textContent = "You Win!"
+         secondContainer.textContent = `Player Score: ${scorePlayer}  Computer Score: ${scoreComputer}`
     }else if (playerSelection.toLowerCase() === 'paper' && computerSelection === "rock"){
         scorePlayer++
-        return "You Win!"
+         container.textContent = "You Win!"
+         secondContainer.textContent = `Player Score: ${scorePlayer}  Computer Score: ${scoreComputer}`
     }else if (playerSelection.toLowerCase() === 'paper' && computerSelection === "scissors"){
         scoreComputer++
-        return "Computer Win!"
+         container.textContent = "Computer Win!"
+         secondContainer.textContent = `Player Score: ${scorePlayer}  Computer Score: ${scoreComputer}`
     }else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === "paper"){
         scorePlayer++
-        return "You Win!"
+         container.textContent = "You Win!"
+         secondContainer.textContent = `Player Score: ${scorePlayer}  Computer Score: ${scoreComputer}`
     }else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === "rock"){
         scoreComputer++
-        return "Computer Win!"
+         container.textContent = "Computer Win!"
+         secondContainer.textContent = `Player Score: ${scorePlayer}  Computer Score: ${scoreComputer}`
     }
 }
 
-rock.addEventListener("click",() => {console.log(playRound('rock',computer))})
-paper.addEventListener("click",() => {console.log(playRound('paper',computer))})
-scissors.addEventListener("click",() => {console.log(playRound('scissors',computer))})
+rock.addEventListener("click",() => {
+    let computer = getComputerChoice()
+    playRound('rock',computer)})
+paper.addEventListener("click",() => {
+    let computer = getComputerChoice()
+    playRound('paper',computer)})
+scissors.addEventListener("click",() => {
+    let computer = getComputerChoice()
+    playRound('scissors',computer)})
 
-// function game(){
-//     for(let i = 0; i < 5 ; i++){
-//         let player = prompt("Ce alegi: ROCK | PAPER | SCISSORS ?")
-//         let computer = getComputerChoice()
-//         console.log(playRound(player,computer)) 
-//         console.log(`Player:${scorePlayer} Tied:${tied} Computer${scoreComputer}`)
-//     }
-    
-//     if(scorePlayer > scoreComputer){
-//         console.log("Player win!!")
-//     }else{
-//         console.log("Computer win!!")
-//     }
-// }
 
-// game()
