@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+html{
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    background-color: #FF6000 ;
+}
+
+h1{
+    color: #FFA559;
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 70px;
+    margin: 0;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+
+
+#fistContainer , p {
+    width: 500px;
+    height: auto;
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 40px;
+    margin: 0;
+    color: #FFE6C7;
+    text-align: center;
+}
+
+
+
+#secondContainer > p{
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 40px;
+    margin: 0;
+    color: #FFE6C7;
+}
+#secondContainer{
+    width: 500px;
+    height: 50px;
+}
+
+.main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.game-container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#restart{
+    background-color: #454545;
+    padding: 10px 10px;
+    font-size: 30px;
+    font-family: 'Delicious Handrawn', cursive;
+    color: #FFE6C7;
+    border-radius: 10px;
+
+}
+
+#restart:hover{
+    background-color: #FFE6C7;
+    color: #454545;
+}
