@@ -5,6 +5,7 @@ let tied = 0
 const rock = document.getElementById('rock')
 const paper = document.getElementById("paper")
 const scissors = document.getElementById("scissors")
+const restartbtn = document.getElementById('restart')
 
 const playerChoise = [rock, paper, scissors]
 
@@ -50,14 +51,33 @@ function playRound (playerSelection, computerSelection){
     }
 }
 
+function restart(){
+    scoreComputer = 0;
+    scorePlayer = 0;
+    tied = 0;
+    secondContainer.textContent = ''
+    container.textContent = ''
+}
+
+function game(player,computer){
+    playRound(player,computer)
+    if(scorePlayer === 5 ){
+        restart()
+        container.textContent = "You win"
+    }else if (scoreComputer === 5){
+        restart()
+        container.textContent = "Computer win"
+    }
+}
+
 rock.addEventListener("click",() => {
     let computer = getComputerChoice()
-    playRound('rock',computer)})
+    game('rock',computer)})
 paper.addEventListener("click",() => {
     let computer = getComputerChoice()
-    playRound('paper',computer)})
+    game('paper',computer)})
 scissors.addEventListener("click",() => {
     let computer = getComputerChoice()
-    playRound('scissors',computer)})
+    game('scissors',computer)})
 
-
+restartbtn.addEventListener('click',()=>{restart()})
